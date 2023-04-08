@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        body {
+            background: linear-gradient(to right, rgb(110, 5, 110), rgb(54, 9, 54));
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 23px;
+
+
+        }
+
+        table {
+            margin: auto;
+
+        }
+
+        .box {
+            background-color: black;
+        }
+
+         .screen input {
+            border: 1px solid rgb(8, 46, 8);
+            /* font-size: 34px;
+            border-radius: 10px;*/
+            margin-top: 20px;
+            padding: 5px;
+            margin-bottom: 20px;
+            /*box-shadow: 0px 0x 2px 2px rgb(165, 82, 82);*/
+            font-size: 1rem;
+            width: 200px;
+            height: 30px;
+            
+            box-shadow: 0px 0px 15px 6px rgb(121, 119, 119);
+
+
+        }
+
+        .btn input {
+
+            background-color: rgb(134, 224, 224);
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            text-align: center;
+            box-shadow: -8px -8px 15px rgb(58, 58, 53);
+            margin: 5px;
+            padding: 5px;
+            cursor: pointer;
+
+        }
+
+        .btn input :hover {
+            transform: scale(3.5em);
+        }
+
+        .calculator {
+            padding: 23px;
+            background-color: black;
+            border-radius: 53px;
+            display: inline-block;
+            box-shadow: 0px 0px 47px 14px rgb(24, 18, 18);
+
+        }
+
+        .btn input.btn-operator {
+            background-color: rgb(241, 218, 222);
+            text-align: center;
+
+        }
+
+        .btn input.btn-operator-2 {
+            background-color: rgb(240, 192, 150);
+            text-align: center;
+            height: 50px;
+            width: 170px;
+            border-radius: 10px;
+            font-size: 2rem;
+
+        }/*@media screen and (max-width: 1020px){
+            .container{
+                width: 800px;
+                float: none;
+            }
+        }@media screen and (max-width: 900px){
+            body{
+                width: auto;
+                float: none;
+            }
+            .container{
+                width: 500px;
+            }
+        }@media screen and (max-width: 420px){
+           body{
+
+          
+            width: auto;}
+            .container{
+                
+                float: none;
+            }
+        }*/
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>calculator</h1>
+        <div class="calculator">
+            <form class="calculatorform" name="calculatorform">
+                <div class="screen">
+                    <input type="text" name="screen" id="name">
+                </div>
+                <table>
+                    
+                    <div class="btn">
+                        
+                        <input type="button" class="btn-operator-2" name="sumbl" value="Clear"onclick="Clear()">
+                        <input type="button" class="number" name="sumbl" value="00" onclick="valuebutton(this)">
+                        
+                    </div>
+                    <div class="btn">
+                        <input type="button" class="number" name="sumbl" value="9" onclick="valuebutton(this)">
+                        <input type="button" class="number" name="sumbl" value="8" onclick="valuebutton(this)">
+                        <input type="button" class="number" name="sumbl" value="7" onclick="valuebutton(this)">
+                        <input type="button" class="btn-operator" name="sumbl" value="*" onclick="valuebutton(this)">
+                        
+                    </div>
+                    <div class="btn">
+                        <input type="button" class="number" name="sumbl" value="6" onclick="valuebutton(this)">
+                        <input type="button" class="number" name="sumbl" value="5" onclick="valuebutton(this)">
+                        <input type="button" class="number" name="sumbl" value="4" onclick="valuebutton(this)">
+                        <input type="button" class="btn-operator" name="sumbl" value="+" onclick="valuebutton(this)">
+                        
+                    </div>
+                    <div class="btn">
+                        <input type="button" class="number" name="sumbl" value="3" onclick="valuebutton(this)">
+                        <input type="button" class="number" name="sumbl" value="2" onclick="valuebutton(this)">
+                        <input type="button" class="number" name="sumbl" value="1" onclick="valuebutton(this)">
+                        <input type="button" class="btn-operator" name="sumbl" value="-" onclick="valuebutton(this)">
+                        
+                    </div>
+                    <div class="btn">
+                        <input type="button" class="btn-operator" name="sumbl" value="." onclick="valuebutton(this)">
+                        
+                        <input type="button" class="number" name="sumbl" value="0" onclick="valuebutton(this)">
+                        <input type="button" class="btn-operator" name="sumbl" value="/" onclick="valuebutton(this)">
+                        <input type="button" class="btn-operator" name="sumbl" value="=" onclick="calculat(this)">
+                        
+                    </div>
+                    
+                    
+
+                </table>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+        function valuebutton(e){
+            calculatorform.screen.value+=e.value;
+        }
+        function Clear(){
+            calculatorform.screen.value=null;
+        }
+        function calculat(){
+            calculatorform.screen.value=eval(calculatorform.screen.value);
+        }
+        
+
+
+    </script>
+</body>
+
+</html>
